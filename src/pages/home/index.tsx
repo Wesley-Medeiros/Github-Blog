@@ -1,7 +1,7 @@
 function Home() {
   return(
     <h1>
-      Hello, world!
+      Hello, World!
     </h1>
   )
 }
