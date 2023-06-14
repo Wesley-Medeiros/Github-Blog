@@ -7,7 +7,9 @@ function DefaultLayout() {
     <div>
       <LayoutContainer>
         <Header />
-        <Outlet />
+        <main>
+          <Outlet />
+        </main>
       </LayoutContainer>
     </div>
   )
