@@ -15,7 +15,7 @@ function Profile() {
           <ExtenalLink text="Github" href="#"/>
         </header>
 
-        <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
+        <p>Desenvolvedor Front-end com foco em #html #css #javascript #react #typescript</p>
         <ul>
           <li><FontAwesomeIcon icon={faGithub} />Wesley-Medeiros</li>
           <li><FontAwesomeIcon icon={faBuilding} />SeedOn</li>
