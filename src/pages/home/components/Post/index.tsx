@@ -1,11 +1,11 @@
 import { PostContainer } from "./styles"
 
-function Post() {
+function PostList() {
   return(
    <PostContainer to="/post/1">
     <div>
       <strong>JavaScript data types and data structures</strong>
-      <span>Há 1 dia atras</span>
+      <span>Há 1 dia atrás</span>
     </div>
 
     <p>Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in...</p>
@@ -13,4 +13,4 @@ function Post() {
   )
 }
 
-export default Post
+export default PostList

@@ -1,16 +1,18 @@
-import { ComponentProps } from "react";
+import { ComponentProps, ReactNode } from "react";
 import { ExtenalLinkContainer } from "./styles"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 type ExtenalLinkProps = ComponentProps<typeof ExtenalLinkContainer> & {
   text: string;
+  icon?: ReactNode;
+  variant?: "iconLeft",
 }
 
-export function ExtenalLink({ text, ...rest }: ExtenalLinkProps) {
+export function ExtenalLink({ text, icon, ...rest }: ExtenalLinkProps) {
   return <ExtenalLinkContainer {...rest}>
     {text}
-    <FontAwesomeIcon icon={faUpRightFromSquare} />
+    {icon ?? <FontAwesomeIcon icon={faUpRightFromSquare} />}
     </ExtenalLinkContainer>
 }
 

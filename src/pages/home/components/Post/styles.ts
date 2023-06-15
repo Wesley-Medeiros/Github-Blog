@@ -45,6 +45,4 @@ export const PostContainer = styled(Link)`
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
- 
 `;

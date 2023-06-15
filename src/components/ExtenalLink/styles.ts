@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const ExtenalLinkContainer = styled.a`
+interface ExtenalLinkProps {
+  variant?: "iconLeft"
+}
+
+export const ExtenalLinkContainer = styled.a<ExtenalLinkProps>`
   display: flex;
   align-items: center;
   height: 19px;
@@ -22,4 +26,8 @@ export const ExtenalLinkContainer = styled.a`
   &:hover {
     border-color: ${({ theme }) => theme.colors["brand-blue"]};
   }
+
+  ${({ variant }) => variant === "iconLeft" && css`
+    flex-direction: row-reverse;
+  `}
 `;

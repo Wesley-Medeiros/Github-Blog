@@ -1,4 +1,4 @@
-import Post from "./components/Post"
+import PostList from "./components/Post"
 import Profile from "./components/Profile"
 import SearchForm from "./components/SearchForm"
 import { PostListContainer } from "./styles"
@@ -10,12 +10,12 @@ function Home() {
       <SearchForm />
 
       <PostListContainer>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <PostList />
+        <PostList />
+        <PostList />
+        <PostList />
+        <PostList />
+        <PostList />
       </PostListContainer>
     </>
   )
