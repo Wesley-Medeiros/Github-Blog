@@ -9,7 +9,6 @@ export const ExtenalLinkContainer = styled.a`
   font-weight: 700;
   transition: 0.4s;
   border-bottom: 1px solid transparent;
-  border: none;
   background: none;
   color: ${({ theme }) => theme.colors["brand-blue"]};
   font-size: ${({ theme }) => theme.textSizes["components-link"]};
@@ -18,5 +17,9 @@ export const ExtenalLinkContainer = styled.a`
   svg {
     width: 0.75rem;
     height: 0.75rem;
+  }
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors["brand-blue"]};
   }
 `;
