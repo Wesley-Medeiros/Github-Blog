@@ -1,14 +1,22 @@
+import { IPost } from "../..";
+import RelativeDateFormatter from "../../../../utils/Formatter";
 import { PostContainer } from "./styles"
 
-function PostList() {
+interface PostProps {
+  post: IPost;
+}
+
+function PostList({ post }: PostProps) {
+  const formattedDate = RelativeDateFormatter(post.created_at)
+
   return(
-   <PostContainer to="/post/1">
+   <PostContainer to={`/post/${post.number}`}>
     <div>
-      <strong>JavaScript data types and data structures</strong>
-      <span>Há 1 dia atrás</span>
+      <strong>{post.title}</strong>
+      <span>{formattedDate}</span>
     </div>
 
-    <p>Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in...</p>
+    <p>{post.body}</p>
    </PostContainer> 
   )
 }
