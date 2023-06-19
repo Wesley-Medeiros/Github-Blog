@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useState } from "react"
 import PostList from "./components/Post"
 import Profile from "./components/Profile"
@@ -28,7 +29,6 @@ function Home() {
     try {
       setIsLoading(true)
       const response = await api.get(`/search/issues?q=${query}%20repo${userName}/${repoName}`);
-      console.log(response.data)
       setPosts(response.data.items)
     } finally {
       setIsLoading(false)
@@ -45,7 +45,7 @@ function Home() {
   return(
     <>
       <Profile />
-      <SearchForm />
+      <SearchForm getPosts={getPosts} postLength={posts.length} />
 
       <PostListContainer>
         {posts.map((post) => (

@@ -1,14 +1,36 @@
+import { useForm } from "react-hook-form"
 import { SearchFormContainer } from "./styles"
+import * as z from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 
-function SearchForm() {
+const searchFormSchema = z.object({
+  query: z.string()
+})
+
+type SearchFormInput = z.infer<typeof searchFormSchema>
+
+interface SearchInputProps {
+  getPosts: (query?: string) => Promise<void>;
+  postLength: number;
+}
+
+function SearchForm({ getPosts, postLength }: SearchInputProps) {
+  const { register, handleSubmit } = useForm<SearchFormInput>({
+    resolver: zodResolver(searchFormSchema)
+  });
+
+  async function handleSearchPost(data: SearchFormInput) {
+   await getPosts(data.query)
+  }
+
   return(
-    <SearchFormContainer>
+    <SearchFormContainer onSubmit={handleSubmit(handleSearchPost)} >
       <header>
         <h3>Publucações</h3>
-        <span>6 Publicações</span>
+        <span>{postLength} Publicações</span>
       </header>
 
-      <input type="text" placeholder="Buscar conteúdo" />
+      <input type="text" placeholder="Buscar conteúdo" {...register("query")} />
     </SearchFormContainer>
   )
 }
