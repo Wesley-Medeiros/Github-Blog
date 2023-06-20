@@ -30,7 +30,11 @@ function SearchForm({ getPosts, postLength }: SearchInputProps) {
         <span>{postLength} Publicações</span>
       </header>
 
-      <input type="text" placeholder="Buscar conteúdo" {...register("query")} />
+      <input 
+      type="text"
+      placeholder="Buscar conteúdo"
+      {...register("query")}
+       autoComplete="off" />
     </SearchFormContainer>
   )
 }

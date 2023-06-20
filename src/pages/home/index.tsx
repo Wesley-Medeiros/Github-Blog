@@ -7,7 +7,7 @@ import { PostListContainer } from "./styles"
 import { api } from "../../lib/axios"
 
 const userName = import.meta.env.VITE_GITHUB_USERNAME;
-const repoName = import.meta.env.VITE_GITHUB_USERNAME;
+const repoName = import.meta.env.VITE_GITHUB_REPONAME;
 
 export interface IPost {
   title: string;
