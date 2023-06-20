@@ -5,6 +5,7 @@ import Profile from "./components/Profile"
 import SearchForm from "./components/SearchForm"
 import { PostListContainer } from "./styles"
 import { api } from "../../lib/axios"
+import Loading from "../../components/Loading"
 
 const userName = import.meta.env.VITE_GITHUB_USERNAME;
 const repoName = import.meta.env.VITE_GITHUB_REPONAME;
@@ -47,11 +48,13 @@ function Home() {
       <Profile />
       <SearchForm getPosts={getPosts} postLength={posts.length} />
 
-      <PostListContainer>
+      {isLoading ? <Loading /> : (
+        <PostListContainer>
         {posts.map((post) => (
           <PostList key={post.number} post={post} />
         ))}
       </PostListContainer>
+      )}
     </>
   )
 }
