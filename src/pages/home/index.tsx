@@ -19,7 +19,7 @@ export interface IPost {
   comments: number;
   user: {
     login: string;
-  }
+  };
 }
 
 function Home() {
@@ -29,7 +29,7 @@ function Home() {
   const getPosts = useCallback(async (query = "") => {
     try {
       setIsLoading(true)
-      const response = await api.get(`/search/issues?q=${query}%20repo${userName}/${repoName}`);
+      const response = await api.get(`/search/issues?q=${query}%20repo:${userName}/${repoName}`);
       setPosts(response.data.items)
     } finally {
       setIsLoading(false)
